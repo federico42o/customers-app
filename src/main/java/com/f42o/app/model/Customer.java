@@ -1,16 +1,20 @@
 package com.f42o.app.model;
 
-import java.io.Serializable;
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-public class Customer implements Serializable {
-	
-
-	private static final long serialVersionUID = 1L;
-
-
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -19,49 +23,6 @@ public class Customer implements Serializable {
 	private String name;
 	private int age;
 	private String nationality;
-	
-	public Customer() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Customer(long id, String name, int age, String nationality) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.nationality = nationality;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public String getNationality() {
-		return nationality;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
 
 	
 	

@@ -1,16 +1,20 @@
 package com.f42o.app.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.f42o.app.model.Customer;
 import com.f42o.app.repository.ICustomerDao;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerImpl implements ICustomerService{
+@RequiredArgsConstructor
+public class CustomerServiceImpl implements ICustomerService{
 	
-	@Autowired
-	ICustomerDao customerDao;
+
+	private final ICustomerDao customerDao;
+
+
+
+
 	
 	
 	@Override
